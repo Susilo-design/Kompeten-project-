@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /*Dark And Light Mode*/ 
+  
+  body {
+    background-color: #c9dcf1;
+    font-family: "Playfair Display", serif;
+    width: 100%;
+    margin-right: 0;
+  }
+  /* Styling lever */
+  .switch {
+    position: fixed;
+    top: 20px;
+    right: 55%;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .change {
+    color: #eff7f8;
+    position: absolute;
+    left: 46%;
+    top: 2.6%;
+  }
+  
+  /* Hide the default checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Lever (slider) */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 29px;
+    transition: 0.4s;
+  }
+  
+  /* Lingkaran dalam lever */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+  
+  /* Saat checkbox aktif (mode gelap) */
+  input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(25px);
+  }
+  
+  body.dark-mode {
+    background-color: #1f2a48;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: "poppins";
+  }
+  
+  #output-sad {
+    margin-bottom: 30px;
+  }
+  
+  .detail {
+    font-weight: 400;
+  }
+  
+  .custom-container {
+    text-align: center;
+    background-color: #f3f8fa;
+    justify-content: space-between;
+    align-items: center;
+    width: 63%; 
+    height: auto;
+    position: relative;
+    left: 20%;
+    top: 25%;
+    display: flex;
+    gap: auto;
+    border-radius: 30px;;
+  }
+  
+  .custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .custom-col {
+    flex: 1;
+    padding: 15px;
+  }
+  
+  .smile {
+    width: 100%;
+    border-radius: 30px;
+  }
+  
+  .sad {
+    width: 100%;
+    border-radius: 30px;
+  }
+
+
+
+.default-split-color{
+  background-color: #f4e08b;
+  position: relative;
+  height: 50%;
+  border-radius: 30px 30px 0px 0px;
+  padding: 30px;
+}
+
+.default-split-color-2{
+  position: relative;
+  bottom: 10px;
+  background-color: white;
+  height: 50%;
+  border-radius: 0px 0px 30px 30px;
+}
+
+
+  
+  .split-color {
+    background-color: #f4e08b;
+    position: relative;
+    height: 50%;
+    border-radius: 30px 30px 0px 0px;
+    padding: 30px;
+  }
+  
+  .split-color-2{
+    background-color: white;
+    height: 50%;
+    border-radius: 0px 0px 30px 30px;
+  }
+
+  
+  .text {
+    position: relative;
+    top: 16%;
+    font-size: 1.6rem;
+  }
+  
+  .blue-text {
+    color: #4a90e2; 
+    font-weight: 900;
+  }
+  
+  .fa-regular {
+    font-size: 4rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .text h1 {
+    margin: 10px 0px 0px 0px;
+  }
+  
+  .middle {
+    position: absolute; 
+    top: 91%;
+    left: 32%;
+    width: 35%;
+    height: 10%;
+    padding: 9px 6px;
+    padding-bottom: 30px;
+    background-color: #f8f9fa;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+    font-weight: 300;
+  }
+  
+  .card-output {
+    padding: 30px;
+    background-color: rgb(68, 159, 215);
+    height: 30rem;
+    position: relative;
+    border-radius: 30px 0px 0px 30px;
+  }
+  
+  input {
+    border: 1px solid #4a90e2;
+    box-shadow: 0 0 5px rgba(0, 148, 255, 0.5);
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .card-input {
+    width: 100%;
+    margin-right: 60px;
+  }
+  
+  .card-input input::placeholder {
+    font-size: 30px;
+    border-radius: 30px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  form {
+    text-align: start;
+    display: inline-block;
+    border-radius: 30px;
+  }
+  
+  form h1 {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  
+  form h5 {
+    font-size: 15px;
+    font-weight: 200;
+    margin: 1rem 0rem;
+  }
+  
+  .custom-btn {
+    width: 18%;
+    height: 5%;
+    font-size: 1rem;
+    background-color: #4a90e2;
+    border-radius: 4px;
+    color: white;
+    border: #eff7f8;
+    margin-top: 30px;
+    box-shadow: 0 0 5px rgba(0, 148, 255, 0.5);
+  }
+  
+  .custom-btn button{
+    padding: 8px;
+  
+  }
+  
+  .custom-form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .custom-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #4a90e2;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 5px rgba(0, 148, 255, 0.5);
+  }
+  

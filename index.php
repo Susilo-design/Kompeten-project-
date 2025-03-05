@@ -1,0 +1,112 @@
+<?php
+$nama = isset($_POST['nama']) ? htmlspecialchars($_POST['nama']) : '';
+$nilai = isset($_POST['nilai']) ? htmlspecialchars($_POST['nilai']) : '';
+?>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <label class="switch">
+        <input type="checkbox" id="toggle-mode">
+        <span class="slider"></span>
+    </label>
+
+    <div class="change">
+        <h3>Change Mode</h3>
+    </div>
+
+    <div class="custom-container">
+        <div class="custom-row">
+            <div class="custom-col card-output">
+
+                <div class="-default-smile" <?php echo $nilai === '' ? '' : 'hidden'; ?>>   
+                    <div class="default-split-color">
+                        <i class="fa-regular fa-face-smile-beam blue-text"></i>
+                        <h1 class="blue-text" style="font-size: 3rem;">Kompeten</h1>
+                        <div class="default-middle">
+                            <h5>Rincian Nilai</h5>
+                        </div>
+                    </div>
+                    <div class="default-split-color-2">
+                        <div class="text">
+                            <h4 id="name-output-smile"></h4>
+                            <h1>Nilai</h1>
+                            <h3 class="blue-text" id="output-smile"></h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- diatas KKM -->
+                <div class="smile <?php echo $nilai !== '' && $nilai >= 75 ? '' : 'hidden'; ?>">
+                    <div class="split-color">
+                        <i class="fa-regular fa-face-smile-beam blue-text"></i>
+                        <b>
+                            <h1 class="blue-text" style="font-size: 3rem;">Kompeten</h1>
+                            <div class="middle">
+                                <h5>Rincian Nilai</h5>
+                            </div>
+                    </div>
+                    <div class="split-color-2">
+                        <div class="text">
+                            <h4 id="name-output-smile"><?php echo $nama !== '' ? $nama : '?'; ?></h4>
+                            <h1>Nilai</h1>
+                            <h3 class="blue-text" id="output-smile"><?php echo $nilai !== '' ? $nilai : '?'; ?></h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- dibawah KKM -->
+                <div class="sad <?php echo $nilai !== '' && $nilai < 75 ? '' : 'hidden'; ?>">
+                    <div class="split-color">
+                        <i class="fa-regular fa-face-tired blue-text"></i>
+                        <b>
+                            <h1 class="blue-text" style="font-size: 2.5rem;">belum Kompeten</h1>
+                            <div class="middle">
+                                <h5>Rincian Nilai</h5>
+                            </div>
+                    </div>
+                    <div class="split-color-2">
+                        <div class="text">
+                            <h4 id="name-output-sad"><?php echo $nama !== '' ? $nama : '?'; ?></h4>
+                            <h1>Nilai</h1>
+                            <h3 class="blue-text" id="output-sad"><?php echo $nilai !== '' ? $nilai : '?'; ?></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="custom-col card-input mt-5">
+                <form id="nilai-form" method="POST" action="">
+                    <h1 class="blue-text">Cek Keterangan Nilai</h1>
+                    <div class="custom-form-group">
+                        <label for="nama-input" class="fw-normal">Nama</label>
+                        <input type="text" class="custom-input" id="nama-input" name="nama" />
+                    </div>
+                    <div class="custom-form-group">
+                        <label for="nilai-input" class="fw-normal">Nilai</label>
+                        <input type="number" class="custom-input" id="nilai-input" name="nilai" />
+                    </div>
+                    <button type="submit" class="custom-btn ">Kirim</button>
+                </form>
+                      
+            </div> 
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
